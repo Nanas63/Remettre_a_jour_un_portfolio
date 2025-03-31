@@ -1,5 +1,8 @@
 
-/*Css Navbar*/
+
+
+
+/*Navbar*/
 
 .navbar {
   display: flex;
@@ -11,7 +14,7 @@
   border-radius: 20px;
 }
 
-/* Style du bouton burger */
+/*bouton burger */
 .burger-button {
   display: flex;
   flex-direction: column;
@@ -25,7 +28,7 @@
 }
 
 .burger-button span {
-  display: block;
+  display: flex;
   width: 100%;
   height: 4px;
   background: white;
@@ -37,9 +40,7 @@
   display: none;
   flex-direction: column;
   background-color: black;
-  position: absolute;
-  top: 50px;
-  right: 20px;
+
   width: 150px;
   padding: 10px;
   list-style: none;
@@ -57,12 +58,8 @@
 /* Afficher le menu quand actif */
 .menu.active {
   display: flex;
+  justify-content: left;
 }
-
-
-
-
-
 
 
 
@@ -72,6 +69,13 @@
 *{
   margin: 0;
 }
+
+.about {
+  color: #bbb;
+  text-align: center;
+  margin: auto;
+}
+
 body {
   font-family: Arial, sans-serif;
   background-color: #000;
@@ -99,7 +103,7 @@ body.dark-mode {
 
 
 button {
-  padding: 5px 10px;
+  /* padding: 5px 10px; */
   font-size: 10px;
   font-weight: bold;
   cursor: pointer;
@@ -117,28 +121,15 @@ button {
   display: flex;
   flex-direction:row;
 }
-header {
+
+
+         
+footer {
   text-align: center;
-  padding: 20px;
+  padding: 10px;
   background-color: #000;
-
 }
 
-        
-main {
-  padding: 20px;
-  align-content: center;
-  /* width: 85%; */
-}
-
-        
-.about {
-  color: #bbb;
-  text-align: center;
-  margin: auto;
-}
-
-        
 .gallery1 {
   display: flex;
   flex-direction: row;
@@ -177,11 +168,24 @@ main {
 
 }
 
-footer {
+header {
   text-align: center;
-  padding: 10px;
+  padding: 20px;
   background-color: #000;
+
 }
+/* Agrandir l'image palmiers au click */
+.image {
+  transition: transform 0.3s ease;
+  cursor: pointer;
+  width: 100%;
+  height: 200px;
+}
+
+.image.grande {
+  transform: scale(1.5); /* Agrandir à 1,5 fois sa taille */
+}
+
 
 h3 {
   text-align: center;
@@ -204,7 +208,7 @@ h3 {
 
 #loader {
   border: 16px solid #f3f3f3; /* Bord clair */
-  border-top: 16px solid #3498db; /* Bord coloré pour l'animation */
+  border-top: 16px solid black; /* Bord coloré pour l'animation */
   border-radius: 50%;
   width: 80px;
   height: 80px;
@@ -218,11 +222,11 @@ h3 {
 }
 
 
-
-
-
-
-
+main {
+  padding: 20px;
+  align-content: center;
+  /* width: 85%; */
+}
 
 
 
@@ -236,11 +240,6 @@ h3 {
 }
 
 
-
-.image {
-  width: 100%;
-  height: 200px;
-}
 
 .bg-yellow {
   background:url(./images_jpg/palmiers.jpg)center;
@@ -294,7 +293,17 @@ float: left;
 color: #fff;
 }
   
-  
+
+.container{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  }
+
+  #next{
+    margin-right: 20px;
+  }
+   
 /* Move slides overflowed container */
 #slide1:checked ~ .images .images-inner {
   margin-left: 0;
@@ -368,13 +377,17 @@ color: #fff;
 #play1:checked ~ div .fake-radio .radio-btn:nth-child(3) {
   animation: bullet 12300ms infinite 7200ms;	
 }
+
+
+/* Rendre le slider controllable */
+
 /* Calculate AUTOPLAY for BULLETS - END */
   
-  
-  
-  
 /* Calculate AUTOPLAY for SLIDES */
-  @keyframes slide {
+
+
+/* Supprimer la lecture automatique du slider */
+ /*  @keyframes slide {
     0%, 25.203252032520325%	{ margin-left: 0; }
     33.333333333333336%, 58.53658536585366%	{ margin-left: -100%; }
     66.66666666666667%, 91.869918699187%	{ margin-left: -200%; }
@@ -383,7 +396,9 @@ color: #fff;
   
 .st-slider > #play1:checked ~ .images .images-inner {
   animation: slide 12300ms infinite;	
-}
+} */
+
+
 /* Calculate AUTOPLAY for SLIDES - END */
   
   
